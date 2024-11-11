@@ -1,0 +1,4 @@
+﻿module Program
+
+printfn "ProjectTests"
+

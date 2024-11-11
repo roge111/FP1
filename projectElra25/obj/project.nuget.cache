@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "si1nojtuIwg=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\batar\\OneDrive - ITMO UNIVERSITY\\Университет ИТМО\\3 курс\\Функциональное программирование\\Лабораторная работа 2\\projectElra25\\projectElra25.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\batar\\.nuget\\packages\\fsharp.core\\8.0.401\\fsharp.core.8.0.401.nupkg.sha512"
+  ],
+  "logs": []
+}

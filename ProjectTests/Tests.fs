@@ -5,7 +5,7 @@ open Xunit
 open projectElra25
 open projectElra6
 
-Проверка результата вывода хвостовой рекурсивной функции
+//Проверка результата вывода хвостовой рекурсивной функции
 let ``fibonachiHvost searches for the first number greater than 1000`` () =
 
     let result = fibonachiHvost(1000)

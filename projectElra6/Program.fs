@@ -26,9 +26,7 @@ let result(n: int): int =
     else
         res <- summKv - summ 
     res
-let r: int  = result(100)
 
-printf "%i\n" r
 
 // Реализация рекурсивной программой
 
@@ -52,5 +50,3 @@ let result2(n: int): int =
     else
         res <- summKv - summ
     res
-let res: int  = result2(100)
-printf "%i\n" res

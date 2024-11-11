@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\projectElra25\projectElra25.fsproj" />
+    <ProjectReference Include="..\projectElra6\projectElra6.fsproj" />
   </ItemGroup>
 
 </Project>

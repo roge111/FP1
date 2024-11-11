@@ -13,7 +13,7 @@ let ``fibonachiHvost searches for the first number greater than 1000`` () =
 
 // Проверка результата вывода рекурсивной функцией
 let ``loop_r searches for the first number greater than 1000`` () =
-    let result  = loop_r(1000)
+    let result  = loop_r([1; 1], 1000)
     Assert.Equal(1597, result)
 
 //Проверка результата вывода рекурсивной ховстовой функции

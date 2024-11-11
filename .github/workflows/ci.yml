@@ -22,8 +22,13 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore projectElra6/projectElra6.fsproj
 
-      - name: Build project
+      - name: Restore dependencies
+        run: dotnet restore projectElra25/projectElra25.fsproj
+
+      - name: Build projectElra6
         run: dotnet build ./projectElra6
+      - name: Build projectElra25
+        run: dotnet build ./projectElra25
 
       - name: Set DOTNET_ROLL_FORWARD
         run: echo "DOTNET_ROLL_FORWARD=latestMajor" >> $GITHUB_ENV
@@ -32,16 +37,30 @@ jobs:
           dotnet tool install -g dotnet-fsharplint
           echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
           dotnet fsharplint lint ./projectElra6
+      - name: Lint
+        run: |
+          dotnet tool install -g dotnet-fsharplint
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+          dotnet fsharplint lint ./projectElra25
       - name: Formatter
         run: |
           dotnet tool install -g fantomas-tool
           echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
           fantomas ./projectElra6/*.fs 
+
+      - name: Formatter
+        run: |
+          dotnet tool install -g fantomas-tool
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+          fantomas ./projectElra25/*.fs 
     
       
         
       - name: Run project
         run: dotnet run --project ./projectElra6
+
+      - name: Run project
+        run: dotnet run --project ./projectElra25
 
 
       - name: Tests

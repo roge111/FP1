@@ -17,12 +17,12 @@
 
   Приведу в пример хвостовую рекурсию, находящую сумму числе от 1 до 100:
 
-    let elra6Summ(): int  = 
-      let rec accElra6Summ(acc: int, i: int): int =
-          if i = 100 then acc
+    let elra6Summ(n: int): int  = 
+      let rec accElra6Summ(acc: int, i: int, n: int): int =
+          if i > n then acc
           else
-              accElra6Summ (acc + i, i + 1)
-      accElra6Summ(0, 0)
+              accElra6Summ (acc + i, i + 1, n)
+      accElra6Summ(0, 0, n)
   Здесь задействуется память аккумулятора, что позволяется расширить память для рекурсии. За память аккумулятора отвечает acc
   
   А вызов рекрусивной функции является последней операции функции

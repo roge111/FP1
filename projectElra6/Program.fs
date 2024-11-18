@@ -26,19 +26,7 @@ let result(n: int): int =
     else
         res <- summKv - summ 
     res
-// Реализация с использованием специального синтаксиса для цикла
-let result3(n: int): int =
-    let mutable summ: int = 0
-    let mutable summKv: int = 0
-    for i in 1 .. n do
-        summ <- summ + i
-        summKv <- summKv + i * i
-    
-    
-    if summ > summKv then
-        summ - summKv
-    else
-        summKv - summ
+
 
 
 // Реализация рекурсивной программой

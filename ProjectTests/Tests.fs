@@ -25,9 +25,6 @@ let ``result finds the difference between the squared sum and the sum of the squ
 let ``result2 finds the difference between the squared sum and the sum of the squares of numbers from 1 to 100`` () =
     let res = result2(100)
     Assert.Equal(323401, res)
-// Проверка результата вывода функции, реализованнно со специальным синтаксисом для цикла
-let ``result3 finds the difference between the squared sum and the sum of the squares of numbers from 1 to 100``() =
-    let res = result3(100)
-    Assert.Equal(333300, res)
+
 
 

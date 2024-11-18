@@ -39,24 +39,6 @@
                 Elra6SummKv(summ + i * i, i + 1, n)
   Выше реализации нахождении суммы квадратов чисел от 1 до n.
 
-  **Специальный синтаксис**
-
-  Так же была сделана реализация с помощью специального синтаксиса для циклов
-
-    let result3(n: int): int =
-    let mutable summ: int = 0
-    let mutable summKv: int = 0
-    for i in 1 .. n do
-        summ <- summ + i
-        summKv <- summKv + i * i
-    
-    
-    if summ > summKv then
-        summ - summKv
-    else
-        summKv - summ
-    
-
   Так же приведу в пример аналогичную программу на традиционном языке программирования - Python
 
       def erla6Summ(summ: int, i: int) -> int:
@@ -78,25 +60,24 @@
 
   Релаизация находиться в диреткории "projectElra25". Реализация выполняется так же с помощью хвостовой рекурсии и обычной рекурсии
 
+    // Реализация модульной реализации с хвостовой рекурсией
     let fibonachiHvost (i: int): int = 
-      let rec loop (acc: int list, i)  = 
-              
-              let mutable count = acc.Length
-              if acc[count-1] >= i then acc[count-1]
-              else
-                  loop (List.append acc [acc[count-2] + acc[count - 1]], i)
+        let rec loop (acc: int list, i)  = 
+            if acc[acc.Length-1] >= i then acc[acc.Length-1]
+            else
+                loop (List.append acc [acc[acc.Length-2] + acc[acc.Length - 1]], i)
     
-      loop ([1; 1], i)
+    loop ([1; 1], i)
+
 
   Пометка rec означает в F# то, что функция рекурсивная.  Переменная _acc_ так же означает память аккумулятора
 
   А вот функция, реализованная обычной рекурсией
   
     let rec loop_r(array:int list, i: int): int =
-      let mutable lastIndex = array.Length - 1
-      if array[lastIndex] >= i then array[lastIndex]
+      if array[array.Length - 1] >= i then array[array.Length - 1]
       else
-          loop_r(List.append array [array[lastIndex - 1] + array[lastIndex]], i)
+          loop_r(List.append array [array[array.Length - 2] + array[array.Length - 1]], i)
   Переменная _i_ содержит число, больше которого мы ищем минимальное значение из чисел фибоначи. 
 
   Ниже пример реазации обычной рекурсивной функции для этой проблемы на языке Python

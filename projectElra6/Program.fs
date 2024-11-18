@@ -20,12 +20,11 @@ let result(n: int): int =
 
     let summ: int = elra6Summ(n)
     let summKv: int = elra6SummKv(n)
-    let mutable res =0
     if summ >= summKv then 
-        res <-  summ - summKv
+        summ - summKv
     else
-        res <- summKv - summ 
-    res
+        summKv - summ 
+    
 
 
 
@@ -45,9 +44,8 @@ let result2(n: int): int =
             Elra6Summ (summ + i, i + 1, n)
     let summ: int  = Elra6Summ(0, 0, n)
     let summKv  = Elra6SummKv(1, 1, n)
-    let mutable res: int  = 0
     if summ >= summKv then
-        res <- summ - summKv
+        summ - summKv
     else
-        res <- summKv - summ
-    res
+        summKv - summ
+    

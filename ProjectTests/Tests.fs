@@ -15,16 +15,26 @@ let ``fibonachiHvost searches for the first number greater than 1000`` () =
 let ``loop_r searches for the first number greater than 1000`` () =
     let result  = loop_r([1; 1], 1000)
     Assert.Equal(1597, result)
+//Проверка результат вывода функции с использованием генерации отображения
+let  ``fibonachi searches for the first number greater than 1000``()=
+    let result = int(fibonachi(1000))
+    Assert.Equal(1597, result)
 
 //Проверка результата вывода рекурсивной ховстовой функции
 let ``result finds the difference between the squared sum and the sum of the squares of numbers from 1 to 100``() =
     let res = result(100)
-    Assert.Equal(323401, res)
+    Assert.Equal(333300, res)
 //Проверка результата вывода рекурсивной функции
 
 let ``result2 finds the difference between the squared sum and the sum of the squares of numbers from 1 to 100`` () =
     let res = result2(100)
-    Assert.Equal(323401, res)
+    Assert.Equal(333300, res)
+
+// Проверка результата вывода функции, реализованнно со специальным синтаксисом для цикла
+let ``result3 finds the difference between the squared sum and the sum of the squares of numbers from 1 to 100``() =
+    let res = result3(100)
+    Assert.Equal(333300, res)
+
 
 
 

@@ -6,14 +6,14 @@ let result(n: int): int =
 
     let elra6Summ(n: int): int  = 
         let rec accElra6Summ(acc: int, i: int, n: int): int =
-            if i = n then acc
+            if i = n then acc + 1
             else
                 accElra6Summ (acc + i, i + 1, n)
         accElra6Summ(0, 0, n)
 
     let elra6SummKv(n: int): int = 
         let rec accElra6SummKv(acc: int, i: int, n: int): int = 
-            if i = n then acc
+            if i = n then acc + 
             else
                 accElra6SummKv(acc + i * i, i + 1, n)
         accElra6SummKv(1, 1, n)
@@ -33,13 +33,13 @@ let result(n: int): int =
 
 let result2(n: int): int = 
     let rec Elra6SummKv(summ: int, i: int, n: int): int = 
-            if i = 100 then summ
+            if i = 100 then summ + 1
             else
                 Elra6SummKv(summ + i * i, i + 1, n)
 
 
     let rec Elra6Summ(summ: int, i: int, n: int): int =
-        if i = 100 then summ
+        if i = 100 then summ + 1
         else
             Elra6Summ (summ + i, i + 1, n)
     let summ: int  = Elra6Summ(0, 0, n)

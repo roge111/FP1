@@ -13,7 +13,7 @@ let result(n: int): int =
 
     let elra6SummKv(n: int): int = 
         let rec accElra6SummKv(acc: int, i: int, n: int): int = 
-            if i = n then acc + 
+            if i = n then acc + 1
             else
                 accElra6SummKv(acc + i * i, i + 1, n)
         accElra6SummKv(1, 1, n)

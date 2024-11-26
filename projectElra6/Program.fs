@@ -48,4 +48,17 @@ let result2(n: int): int =
         summ - summKv
     else
         summKv - summ
-    
+
+
+//Реализация при помощи List.map и специального синтакиса для циклов
+let result3(n: int): int =
+    let summList = [for i in 1..n -> i]
+    let summKvList = List.map(fun x -> x * x) summList
+
+    let summ = List.sum summList
+    let summKv = List.sum summKvList
+
+    if summ >= summKv then
+        summ - summKv
+    else
+        summKv - summ

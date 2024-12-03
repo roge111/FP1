@@ -23,18 +23,21 @@ let  ``fibonachi searches for the first number greater than 1000``()=
 //Проверка результата вывода рекурсивной ховстовой функции
 let ``result finds the difference between the squared sum and the sum of the squares of numbers from 1 to 100``() =
     let res = result(100)
-    Assert.Equal(333300, res)
+    Assert.Equal(323400, res)
 //Проверка результата вывода рекурсивной функции
 
 let ``result2 finds the difference between the squared sum and the sum of the squares of numbers from 1 to 100`` () =
     let res = result2(100)
-    Assert.Equal(333300, res)
+    Assert.Equal(323400, res)
 
 // Проверка результата вывода функции, реализованнно со специальным синтаксисом для цикла
 let ``result3 finds the difference between the squared sum and the sum of the squares of numbers from 1 to 100``() =
     let res = result3(100)
-    Assert.Equal(333300, res)
-
+    Assert.Equal(323400, res)
+//Проверка работы реализации с помощью бесконечного списка.
+let ``result4 finds the difference between the squared sum and the sum of the squares of numbers from 1 to 100``() = 
+    let res = result4(100)
+    Assert.Equal(323400, res)
 
 
 

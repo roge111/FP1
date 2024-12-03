@@ -54,3 +54,31 @@ let fibonachi (n: int): int64 =
 
     let res: int64 = result(n, fibolist, 0)
     res
+//Реализация при помощи бесконечного списка
+let finbonachiSeq(n: int): int64=
+
+    
+    let rec fibList(array:int64 list, x: int64): int64 =
+        if int64(array.Length) = x then array[array.Length - 1]
+        else
+            fibList(List.append array [array[array.Length - 2] + array[array.Length - 1]], x)
+
+    let fib(x: int64): int64 =
+        if x = 1 || x = 2 then 1
+        else 
+            let res = fibList([1; 1], x)
+            res
+    
+    let numbers: int64 seq = Seq.initInfinite(fun x -> x)
+
+    
+    let fibolist = Seq.mapi (fun i x -> fib(x)) numbers
+
+    let rec result(n: int, array: int64 seq, i: int): int64 = 
+        if Seq.item i array >= n then Seq.item i array
+        else
+         result(n, array, i + 1)
+            
+
+    let res: int64 = result(n, fibolist, 0)
+    res

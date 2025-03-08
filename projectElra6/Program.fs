@@ -6,16 +6,16 @@ let result(n: int): int =
 
     let elra6Summ(n: int): int  = 
         let rec accElra6Summ(acc: int, i: int, n: int): int =
-            if i = n then acc + i
-            else
-                accElra6Summ (acc + i, i + 1, n)
+            match i with
+            | n -> acc + i
+            | _ -> accElra6Summ (acc + i, i + 1, n)
         accElra6Summ(0, 1, n)
 
     let elra6SummKv(n: int): int = 
         let rec accElra6SummKv(acc: int, i: int, n: int): int = 
-            if i = n then acc + i
-            else
-                accElra6SummKv(acc + i * i, i + 1, n)
+            match i with
+            | n -> acc + i
+            | _ -> accElra6SummKv(acc + i * i, i + 1, n)
         accElra6SummKv(0, 1, n)
 
     let summ: int = elra6Summ(n)
@@ -34,15 +34,16 @@ let result(n: int): int =
 
 let result2(n: int): int = 
     let rec Elra6SummKv(summ: int, i: int, n: int): int = 
-            if i = 100 then summ + 1
-            else
-                Elra6SummKv(summ + i * i, i + 1, n)
+            match i with
+            | 100 -> summ + 1
+            | _ -> Elra6SummKv(summ + i * i, i + 1, n)
 
 
     let rec Elra6Summ(summ: int, i: int, n: int): int =
-        if i = 100 then summ + 1
-        else
-            Elra6Summ (summ + i, i + 1, n)
+        match i with
+        | 100 -> summ + 1
+        | _ -> Elra6Summ (summ + i, i + 1, n)
+        
     let summ: int  = Elra6Summ(0, 1, n)
     let summKv  = Elra6SummKv(0, 1, n)
     if summ >= summKv then
@@ -68,8 +69,9 @@ let result3(n: int): int =
 let result4(n: int): int =
 
     let rec summ(n: int, i: int, s: int, data: int seq): int =
-        if i = n - 1 then s+ (Seq.item i data)
-        else summ(n, i + 1, s+ (Seq.item i data), data)
+         match i with
+        | _ when i = n - 1 -> s + (Seq.item i data)
+        | _ -> summ(n, i + 1, s + (Seq.item i data), data)
     
 
     let data = Seq.initInfinite(fun index -> index)

@@ -84,6 +84,3 @@ let result4 (n: int) : int =
 
     if sum >= sumSq then sum - sumSq else sumSq - sum
 
-let res = result4 (100)
-
-printfn "%i" res
